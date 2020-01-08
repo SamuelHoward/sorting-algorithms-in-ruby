@@ -5,7 +5,9 @@ class Array
     loop do
 
       switchFlag = 0
-      
+
+      # Go through array, switching adjacent entries if the left entry is greater
+      # than the right entry
       for i in 0...(self.length - 1)
 
         if self[i] > self[i + 1]
@@ -17,6 +19,7 @@ class Array
 
       end
 
+      # If no shifting occured in this iteration, sorting is done.
       break if switchFlag == 0
       
     end
