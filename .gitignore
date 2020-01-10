@@ -1,3 +1,4 @@
 # Ignore files I use for testing and temporary files
 *output
 *~
+#*#
