@@ -10,8 +10,14 @@ class Array
       
       while j > 0
 
+        # Place first entry of unsorted subarray into
+        # correct postion of sorted subarray
         if self[j - 1] > tmp
+
+          # Shift entries over
           self[j] = self[j - 1]
+
+          # Palce entry at beginning if reached
           if j == 1
             self[0] = tmp
           end
