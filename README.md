@@ -10,3 +10,4 @@ Currently the algorithms included are:
 - Merge Sort
 - Quick Sort
 - Pancake Sort
+- Gnome Sort
