@@ -1,3 +1,5 @@
+require_relative 'ArrayDisplay'
+
 class Array
 
   
@@ -14,6 +16,26 @@ class Array
       currTail = currTail - 1
       
     end
+        
+  end
+
+  def pancakeSortVisual
+
+    currTail = self.length - 1
+    
+    while currTail > 0
+
+      self.display
+      # Repeatedly place largest entry at end
+      max = self.max(currTail)
+      self.flip(max)
+      self.display
+      self.flip(currTail)
+      currTail = currTail - 1
+      
+    end
+
+    self.display
         
   end
 
@@ -81,11 +103,14 @@ cc = [1, 100, 200, 300, -5, 1, 10, 10, 20]
 A = [a, b, c, d, e, f, g, h]
 B = [aa, bb, cc]
 
-A.each { |i|
-  print i
-  puts
-  i.pancakeSort
-  #i.flip(i.length - 4)
-  print i
-  puts
-}
+#A.each { |i|
+#  print i
+#  puts
+#  i.pancakeSort
+#  #i.flip(i.length - 4)
+#  print i
+#  puts
+#}
+
+z = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20].shuffle
+z.pancakeSortVisual

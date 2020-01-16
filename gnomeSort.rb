@@ -1,3 +1,5 @@
+require_relative 'ArrayDisplay'
+
 class Array
 
   
@@ -7,13 +9,10 @@ class Array
 
     while i <= self.length - 1
 
-      #print self
-      #puts
-      #puts i
       
       if i == 0 or self[i] >= self[i - 1]
         i = i + 1
-        #puts self[i]
+        
       else
         tmp = self[i]
         self[i] = self[i - 1]
@@ -22,6 +21,30 @@ class Array
       end
       
     end
+            
+  end
+
+  def gnomeSortVisual
+
+    i = 1
+
+    while i <= self.length - 1
+
+      self.display
+      
+      if i == 0 or self[i] >= self[i - 1]
+        i = i + 1
+        
+      else
+        tmp = self[i]
+        self[i] = self[i - 1]
+        self[i - 1] = tmp
+        i = i - 1
+      end
+      
+    end
+
+    self.display
             
   end
      
@@ -51,3 +74,6 @@ A.each { |i|
   print i
   puts
 }
+
+z = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20].shuffle
+z.gnomeSortVisual
